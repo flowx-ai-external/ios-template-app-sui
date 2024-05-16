@@ -1,0 +1,49 @@
+PODS:
+  - Alamofire (5.9.1)
+  - FlowXRenderer (3.0.2):
+    - Alamofire
+    - SDWebImageSVGCoder
+    - SDWebImageSwiftUI
+  - FXAuthLibrary (1.0.0):
+    - Alamofire
+    - JWTDecode
+    - SwiftKeychainWrapper
+  - JWTDecode (3.1.0)
+  - SDWebImage (5.19.2):
+    - SDWebImage/Core (= 5.19.2)
+  - SDWebImage/Core (5.19.2)
+  - SDWebImageSVGCoder (1.7.0):
+    - SDWebImage/Core (~> 5.6)
+  - SDWebImageSwiftUI (3.0.4):
+    - SDWebImage (~> 5.10)
+  - SwiftKeychainWrapper (4.0.1)
+
+DEPENDENCIES:
+  - FlowXRenderer
+  - FXAuthLibrary
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - JWTDecode
+    - SDWebImage
+    - SDWebImageSVGCoder
+    - SDWebImageSwiftUI
+    - SwiftKeychainWrapper
+  https://github.com/flowx-ai-external/flowx-ios-specs.git:
+    - FlowXRenderer
+    - FXAuthLibrary
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  FlowXRenderer: 63ba4a1e8b586398e3ba3136d034d952731cc2db
+  FXAuthLibrary: 69700cb2c6d34941e1bd34993128f90a570a0f3d
+  JWTDecode: 3eaab1e06b6f4dcbdd6716aff09ba4c2104ca8b7
+  SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a
+  SDWebImageSVGCoder: 15a300a97ec1c8ac958f009c02220ac0402e936c
+  SDWebImageSwiftUI: 824628d8220906aa101f62b39a7492edd138449d
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+
+PODFILE CHECKSUM: c931b22b98c09d31d2d3cdd287988473e778f1de
+
+COCOAPODS: 1.15.2

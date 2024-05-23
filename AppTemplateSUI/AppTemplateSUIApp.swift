@@ -54,7 +54,7 @@ struct AppTemplateSUIApp: App {
             FlowX.sharedInstance.startSession()
 
             DispatchQueue.main.asyncAfter(deadline: .now()+4) {
-                FXTheme.sharedInstance.setupTheme(withUuid: "{theme-uuid}",
+                FXTheme.sharedInstance.setupTheme(withUuid: ProcessConstants.themeId,
                                                   localFileUrl: Bundle.main.url(forResource: "theme", withExtension: "json"),
                                                   completion: nil)
             }

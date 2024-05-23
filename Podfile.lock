@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
-  - FlowXRenderer (3.0.2):
+  - FlowXRenderer (3.0.4):
     - Alamofire
     - SDWebImageSVGCoder
     - SDWebImageSwiftUI
@@ -36,7 +36,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  FlowXRenderer: 63ba4a1e8b586398e3ba3136d034d952731cc2db
+  FlowXRenderer: b8f022e2a7b4dfba87e22e75336f8965514c3caa
   FXAuthLibrary: 69700cb2c6d34941e1bd34993128f90a570a0f3d
   JWTDecode: 3eaab1e06b6f4dcbdd6716aff09ba4c2104ca8b7
   SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a

@@ -58,6 +58,10 @@ struct LoginView: View {
             }
             
             FlowX.sharedInstance.startSession()
+            
+            FXTheme.sharedInstance.setupTheme(withUuid: "{theme-uuid}",
+                                              localFileUrl: Bundle.main.url(forResource: "theme", withExtension: "json"),
+                                              completion: nil)
         } else {
             FXSessionConfig.sharedInstance.configure { (config) in
                 config.token = FXAuth.sharedInstance.accessToken

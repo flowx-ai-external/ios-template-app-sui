@@ -33,6 +33,8 @@ struct Custom3View: View {
             Text("It was nice having you here, \(dataBinding.wrappedValue?.firstname ?? "Stranger")!")
                 .font(.system(size: 24))
         }
+        .padding()
+        .background(LinearGradient(colors: [.white, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
 
     }
 }

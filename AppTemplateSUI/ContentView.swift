@@ -68,7 +68,8 @@ struct ContentView: View {
             }
             .fullScreenCover(isPresented: $viewModel.isProcessPresented) {
                 FlowxProcessView(viewController: viewModel.processViewController)
-                .ignoresSafeArea()
+                    .preferredColorScheme(.light)
+                    .ignoresSafeArea()
             }
 
             Spacer()

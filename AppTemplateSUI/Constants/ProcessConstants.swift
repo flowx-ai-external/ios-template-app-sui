@@ -8,6 +8,7 @@
 import Foundation
 
 struct ProcessConstants {
-    static let templateProcess = "first_process"
-    static let themeId = "9c9084fb-bf33-492b-8a43-f92d5a30f6c4"
+    static let templateApplicationUuid = ""
+    static let templateProcess = ""
+    static let themeId = ""
 }

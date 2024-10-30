@@ -33,7 +33,8 @@ class ContentViewModel: ObservableObject {
     }
     
     func startProcessRequest() {
-        FlowX.sharedInstance.startProcess(name: ProcessConstants.templateProcess,
+        FlowX.sharedInstance.startProcess(applicationUuid: ProcessConstants.templateApplicationUuid,
+                                          name: ProcessConstants.templateProcess,
                                           params: [:],
                                           isModal: true,
                                           showLoader: true) { processRootViewController in
@@ -42,6 +43,8 @@ class ContentViewModel: ObservableObject {
                 self.processViewController = processRootViewController
                 self.isProcessPresented = true
             }
+        } onProcessEnded: { [weak self] in
+            self?.isProcessPresented = false
         }
     }
 }

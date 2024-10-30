@@ -15,7 +15,7 @@ target 'AppTemplateSUI' do
 
   # Pods for AppTemplateSUI
   pod 'FXAuthLibrary'
-  pod 'FlowXRenderer'
+  pod 'FlowXRenderer', '4.0.2'
 
   target 'AppTemplateSUITests' do
     inherit! :search_paths

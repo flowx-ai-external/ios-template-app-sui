@@ -33,7 +33,7 @@ class ContentViewModel: ObservableObject {
     }
     
     func startProcessRequest() {
-        FlowX.sharedInstance.startProcess(applicationUuid: ProcessConstants.templateApplicationUuid,
+        FlowX.sharedInstance.startProcess(projectId: ProcessConstants.templateApplicationUuid,
                                           name: ProcessConstants.templateProcess,
                                           params: [:],
                                           isModal: true,

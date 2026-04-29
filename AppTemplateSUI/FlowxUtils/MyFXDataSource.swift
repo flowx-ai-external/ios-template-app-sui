@@ -35,7 +35,7 @@ class MyFXDataSource: FXDataSource {
         
     }
     
-    func validate(validatorName: String, value: Any) -> Bool {
+    func validate(validatorName: String, value: Any, params: [String]?) -> Bool {
         switch validatorName {
         case "cnpValidator":
             let cnpValidator = CNPValidator(cnp: value as! String)

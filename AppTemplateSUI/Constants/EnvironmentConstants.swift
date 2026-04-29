@@ -8,9 +8,9 @@
 import Foundation
 
 enum EnvironmentConstants {
-    
+
     static let environment: EnvironmentConstants = .dev
-    
+
     case dev
     
     var baseURL: String {
@@ -24,7 +24,6 @@ enum EnvironmentConstants {
         switch self {
         case .dev:
             return ""
-
         }
 
     }
@@ -38,15 +37,15 @@ enum EnvironmentConstants {
     
     var authClientId: String {
         switch self {
-        case .dev:
+        default:
             return ""
         }
     }
     
     var enginePath: String {
         switch self {
-        case .dev:
-            return "onboarding"
+        default: 
+            return ""
         }
     }
 }

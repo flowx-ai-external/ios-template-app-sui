@@ -39,7 +39,8 @@ struct AppTemplateSUIApp: App {
     
     func configureFlowX() {
         FXConfig.sharedInstance.configure { (config) in
-            config.language = "en-US"
+            config.language = "en"
+            config.locale = "en-US"
             config.enginePath = EnvironmentConstants.environment.enginePath
             config.baseURL = EnvironmentConstants.environment.baseURL
             config.imageBaseURL = EnvironmentConstants.environment.imageBaseURL
@@ -54,8 +55,8 @@ struct AppTemplateSUIApp: App {
             FlowX.sharedInstance.startSession()
 
             DispatchQueue.main.asyncAfter(deadline: .now()+4) {
-                FXTheme.sharedInstance.setupTheme(withUuid: ProcessConstants.themeId,
-                                                  localFileUrl: Bundle.main.url(forResource: "theme", withExtension: "json"),
+                FXTheme.sharedInstance.setupTheme(withUuid: ProcessConstants.FXThemeId,
+                                                  workspaceId: ProcessConstants.FXWorkspaceId,
                                                   completion: nil)
             }
         }

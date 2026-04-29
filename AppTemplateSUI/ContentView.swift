@@ -13,37 +13,40 @@ import Combine
 class ContentViewModel: ObservableObject {
     let uuid = UUID()
 
-    @Published var processViewController: UIViewController!
+    @Published var navigationController: UINavigationController!
     @Published var isProcessPresented: Bool = false
-    
+
     var themeFetched: ReadOnlyCurrentValueSubject<Bool, Never>
     var cancellables: Set<AnyCancellable> = []
 
     init() {
         self.themeFetched = FXTheme.sharedInstance.themeFetched
     }
-    
+
     func startProcess() {
         themeFetched.sink { fetched in
             if fetched {
-                self.startProcessRequest()
+                DispatchQueue.main.async {
+                    self.startProcessRequest()
+                }
             }
         }
         .store(in: &cancellables)
     }
-    
+
     func startProcessRequest() {
-        FlowX.sharedInstance.startProcess(projectId: ProcessConstants.templateApplicationUuid,
-                                          name: ProcessConstants.templateProcess,
+        let navigationController = FXNavigationViewController.navigationController()
+        navigationController.modalPresentationStyle = .overFullScreen
+        self.navigationController = navigationController
+        self.isProcessPresented = true
+
+        FlowX.sharedInstance.startProcess(navigationController: navigationController,
+                                          workspaceId: ProcessConstants.FXWorkspaceId,
+                                          projectId: ProcessConstants.FXProjectId,
+                                          name: ProcessConstants.FXProcess,
                                           params: [:],
                                           isModal: true,
-                                          showLoader: true) { processRootViewController in
-            if let processRootViewController = processRootViewController {
-                processRootViewController.modalPresentationStyle = .overFullScreen
-                self.processViewController = processRootViewController
-                self.isProcessPresented = true
-            }
-        } onProcessEnded: { [weak self] in
+                                          showLoader: true) { [weak self] in
             self?.isProcessPresented = false
         }
     }
@@ -70,7 +73,7 @@ struct ContentView: View {
                 }
             }
             .fullScreenCover(isPresented: $viewModel.isProcessPresented) {
-                FlowxProcessView(viewController: viewModel.processViewController)
+                FlowxProcessView(viewController: viewModel.navigationController)
                     .preferredColorScheme(.light)
                     .ignoresSafeArea()
             }

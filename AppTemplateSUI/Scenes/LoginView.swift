@@ -18,26 +18,38 @@ struct LoginView: View {
     var completion: () -> Void
     
     var body: some View {
-        VStack(spacing: 24) {
-            Text("Login")
-                .font(.title)
-
-            Spacer()
-            
-            TextField("Email", text: $email)
-                .textFieldStyle(.roundedBorder)
-                .textInputAutocapitalization(.none)
-                .keyboardType(.emailAddress)
-            SecureField("Password", text: $password)
-                .textFieldStyle(.roundedBorder)
-
-            Button("Login") {
-                submitForm()
+        NavigationView {
+            VStack(spacing: 24) {
+                Spacer()
+                
+                TextField("Email", text: $email)
+                    .textInputAutocapitalization(.none)
+                    .keyboardType(.emailAddress)
+                    .padding(.horizontal, 8)
+                    .frame(height: 44)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color(.separator), lineWidth: 1)
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color(.systemBackground)))
+                    )
+                SecureField("Password", text: $password)
+                    .padding(.horizontal, 8)
+                    .frame(height: 44)
+                    .background(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color(.separator), lineWidth: 1)
+                            .background(RoundedRectangle(cornerRadius: 6).fill(Color(.systemBackground)))
+                    )
+                
+                Button("Login") {
+                    submitForm()
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
+            .padding()
+            .navigationTitle("Login")
         }
-        .padding()
     }
     
     func submitForm() {
@@ -60,8 +72,8 @@ struct LoginView: View {
             FlowX.sharedInstance.updateAuthorization(token: accessToken)
         }
         
-        FXTheme.sharedInstance.setupTheme(withUuid: ProcessConstants.themeId,
-                                          localFileUrl: Bundle.main.url(forResource: "theme", withExtension: "json"),
+        FXTheme.sharedInstance.setupTheme(withUuid: ProcessConstants.FXThemeId,
+                                          workspaceId: ProcessConstants.FXWorkspaceId,
                                           completion: nil)
     }
     

@@ -8,6 +8,7 @@
 import Foundation
 
 struct ProcessConstants {
+    static let FXOrganizationId = ""
     static let FXWorkspaceId = ""
     static let FXProjectId = ""
     static let FXProcess = ""

@@ -39,6 +39,7 @@ struct AppTemplateSUIApp: App {
     
     func configureFlowX() {
         FXConfig.sharedInstance.configure { (config) in
+            config.organizationId = ProcessConstants.FXOrganizationId
             config.language = "en"
             config.locale = "en-US"
             config.enginePath = EnvironmentConstants.environment.enginePath

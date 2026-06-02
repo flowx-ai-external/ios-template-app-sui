@@ -44,7 +44,7 @@ enum EnvironmentConstants {
     
     var enginePath: String {
         switch self {
-        default: 
+        default:
             return ""
         }
     }

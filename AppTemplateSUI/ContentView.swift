@@ -48,7 +48,9 @@ class ContentViewModel: ObservableObject {
                                           name: ProcessConstants.FXProcess,
                                           params: [:],
                                           isModal: true,
-                                          showLoader: true) { [weak self] in
+                                          showLoader: true) { processInstanceUuid in
+            print(processInstanceUuid)
+        } onProcessEnded: { [weak self] in
             self?.isProcessPresented = false
         }
     }

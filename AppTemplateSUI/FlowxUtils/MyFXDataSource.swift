@@ -57,4 +57,8 @@ class MyFXDataSource: FXDataSource {
     func newProcessStarted(processInstanceUuid: String) {
         
     }
+    
+    func customLoader(type: CustomLoaderType) -> AnyView? {
+        nil
+    }
 }

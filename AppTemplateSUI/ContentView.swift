@@ -35,9 +35,11 @@ class ContentViewModel: ObservableObject {
     }
 
     func startProcessRequest() {
-        let navigationController = FXNavigationViewController.navigationController()
-        navigationController.modalPresentationStyle = .overFullScreen
-        self.navigationController = navigationController
+        if navigationController == nil {
+            let navigationController = FXNavigationViewController.navigationController()
+            navigationController.modalPresentationStyle = .overFullScreen
+            self.navigationController = navigationController
+        }
         self.isProcessPresented = true
 
         FlowX.sharedInstance.startProcess(navigationController: navigationController,

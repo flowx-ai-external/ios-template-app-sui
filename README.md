@@ -72,7 +72,7 @@ The key configuration areas are detailed below:
         case dev
 
         var baseURL: String { ... }       // your base url
-        var imageBaseURL: String { ... }  // your image base url
+        var assetsBaseURL: String { ... } // your assets base url
         var authBaseURL: String { ... }   // your authentication url
         var authClientId: String { ... }  // your Keycloak client id
         var enginePath: String { ... }    // your engine path
@@ -105,7 +105,7 @@ The key configuration areas are detailed below:
         config.locale = "en-US"
         config.enginePath = EnvironmentConstants.environment.enginePath
         config.baseURL = EnvironmentConstants.environment.baseURL
-        config.imageBaseURL = EnvironmentConstants.environment.imageBaseURL
+        config.assetsBaseURL = EnvironmentConstants.environment.assetsBaseURL
         config.logLevel = .verbose
     }
     ```

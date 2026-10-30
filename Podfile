@@ -1,10 +1,12 @@
 source 'https://github.com/flowx-ai-external/flowx-ios-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '15.0'
 
 post_install do |installer|
       installer.pods_project.targets.each do |target|
           target.build_configurations.each do |config|
             config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
           end
       end
   end
@@ -15,7 +17,7 @@ target 'AppTemplateSUI' do
 
   # Pods for AppTemplateSUI
   pod 'FXAuthLibrary'
-  pod 'FlowXRenderer', '10.4.0'
+  pod 'FlowXRenderer', '11.6.0'
 
   target 'AppTemplateSUITests' do
     inherit! :search_paths

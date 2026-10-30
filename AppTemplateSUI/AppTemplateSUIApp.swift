@@ -44,7 +44,7 @@ struct AppTemplateSUIApp: App {
             config.locale = "en-US"
             config.enginePath = EnvironmentConstants.environment.enginePath
             config.baseURL = EnvironmentConstants.environment.baseURL
-            config.imageBaseURL = EnvironmentConstants.environment.imageBaseURL
+            config.assetsBaseURL = EnvironmentConstants.environment.assetsBaseURL
             config.logLevel = .verbose
         }
         

@@ -69,7 +69,7 @@ struct LoginView: View {
         }
         
         if let accessToken = FXAuth.sharedInstance.accessToken {
-            FlowX.sharedInstance.updateAuthorization(token: accessToken)
+            FlowX.sharedInstance.setAccessToken(token: accessToken)
         }
         
         FXTheme.sharedInstance.setupTheme(withUuid: ProcessConstants.FXThemeId,

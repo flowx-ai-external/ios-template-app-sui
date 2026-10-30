@@ -20,7 +20,7 @@ enum EnvironmentConstants {
         }
     }
     
-    var imageBaseURL: String {
+    var assetsBaseURL: String {
         switch self {
         case .dev:
             return ""
